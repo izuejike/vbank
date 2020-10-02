@@ -1,0 +1,7 @@
+body{
+	padding: 0px;
+	margin: 0px; 
+	background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.9)), url(back.jpg) no-repeat center;
+	background-size: cover;
+	height: 100vh;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>V bank</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset = "utf-8" />
+     <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body style="background-color: cyan">
+<h1 style="text-align: center; color: maroon">Hello You Are Welcome to</h1><br>
+
+<h1 style="text-align: center; color: #BF8FF3">Izu's V-BANK</h1><hr style="width: 70%"><br>
+
+<br><h2 style="text-align: center; color: maroon">Please kindly click a button below to select a transaction</h2>
+<h3 style="text-align: center; color: white; color: #BF8FF3" id="bal">You are yet to pay in money</h3>
+<br><div style="text-align: center; ">
+<button style="margin-right: 30px; background-color: #BF8FF3; height: 50px; cursor: pointer; border-radius: 10px" onclick="Addfunction()">Pay in Money</button>
+<button style=" background-color: #BF8FF3; height: 50px; cursor: pointer; border-radius: 10px" onclick="withdrawCash()">Withdraw Money</button>
+<button style="margin-left: 30px; background-color: #BF8FF3; height: 50px; cursor: pointer; border-radius: 10px" onclick="accBal()">Check account balance</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+	var add;
+	var balance = 0;
+	var withdrawMoney = 0;
+	var accBal;
+	var  displayBal;
+	var rermainingAmount = add - withdrawMoney 
+
+	function Addfunction() {
+		 add = parseInt(window.prompt ('How much do you want to pay in ?'))
+		if (add == '' || isNaN(add)) {
+			alert('Please enter a valid amount')
+		}else {
+			balance = balance + add;
+		 alert('You just paid in '+ add  +' naira')
+		 showBalance()
+		}
+	}
+
+
+	function showBalance() {
+		document.getElementById('bal').innerHTML = 'You now have ' +balance+ ' naira'
+	}
+
+	function withdrawCash() {
+		withdrawMoney = parseInt(window.prompt('How much do you want to withdraw?')) 
+		
+		
+		if (isNaN(withdrawMoney) || withdrawMoney == '') {
+			alert('Enter a valid amount')
+		}else if (withdrawMoney+1000 >balance) {
+			alert('Please you cannot withdraw less than 1000')
+		}else{
+			balance = balance - withdrawMoney;
+			alert('You now have ' +balance+ ' left in your account')
+			document.getElementById('bal').innerHTML = 'You now have ' +balance+ ' naira'
+		}
+	}
+
+
+	function accBal() {
+
+		document.getElementById('bal').innerHTML = 'Your account balance is ' +balance+ ' naira'
+	}
+	
+
+</script>
+</body>
+</html>
